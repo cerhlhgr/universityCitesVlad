@@ -1,7 +1,7 @@
 version: "3.3"
 services:
   api:
-    container_name: api_sergey
+    container_name: api_vlad
     build: ./myapp
     environment:
       - POSTGRES_USER=user
@@ -16,8 +16,6 @@ services:
     ports:
       - 5001:5001
     command: npm run start
-    depends_on:
-      - db
     restart: always
 volumes:
   pg_data:
