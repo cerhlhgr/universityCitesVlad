@@ -1,18 +1,5 @@
 version: "3.3"
 services:
-  db:
-    image: postgres:14.1-alpine
-    restart: always
-    container_name: pg_db
-    environment:
-      - POSTGRES_USER=user
-      - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=bot_vk_sergey
-    volumes:
-      - pg_data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
-
   api:
     container_name: api_sergey
     build: ./myapp
