@@ -17,8 +17,8 @@ services:
       - 5001:5001
     command: npm run start
     restart: always
-volumes:
-  pg_data:
+    networks:
+      - somenetwork
 networks:
-  ms_network:
-    external: true
+  somenetwork:
+    driver: bridge
