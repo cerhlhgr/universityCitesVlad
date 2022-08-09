@@ -17,6 +17,6 @@ app.use(cookieParser());
 
 
 //тут руты владос
-app.use('/api_vlad', indexRouter);
+app.use('/vlados', indexRouter);
 
 module.exports = app;
