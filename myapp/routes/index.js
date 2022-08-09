@@ -3,6 +3,6 @@ const BotController = require("../controllers /bot.controller");
 const router = express.Router();
 
 
-router.post('/', BotController.get);
+router.post('/bot_vlad', BotController.get);
 
 module.exports = router;
