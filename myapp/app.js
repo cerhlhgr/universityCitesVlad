@@ -20,8 +20,4 @@ app.use(cookieParser());
 
 app.use('/vlados', indexRouter);
 
-app.listen(callback => {
-    console.log(callback)
-})
-
 module.exports = app;
