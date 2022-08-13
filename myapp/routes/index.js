@@ -4,6 +4,7 @@ const router = express.Router();
 
 
 router.get('/bot_vlad', BotController.get);
+router.get('/bot_vlad/check', BotController.get);
 router.post('/bot_vlad/check', BotController.post)
 
 
