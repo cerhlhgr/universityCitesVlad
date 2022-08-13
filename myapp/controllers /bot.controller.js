@@ -23,6 +23,7 @@ class BotController{
                     q: req.body.object.message.text,
                     count: 1
                 }
+                console.log(requestCities)
                 axios.post("https://dev.vk.com/method/database.getCities", requestCities).then(res => {
                     console.log(res)
                 })
