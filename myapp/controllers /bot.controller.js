@@ -21,7 +21,8 @@ class BotController{
                     access_token: tokenMy,
                     country_id: 1,
                     q: req.body.object.message.text,
-                    count: 1
+                    count: 1,
+                    v: req.body.v
                 }
                 console.log(requestCities)
                 axios.get("https://api.vk.com/method/database.getCities",  {params: requestCities}).then(res => {
