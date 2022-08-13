@@ -32,7 +32,7 @@ class BotController{
                         message: `Вы выбрали город ${req.body.object.message.text}, напишите название уника`,
                         random_id: Math.random()
                     }
-                    axios.get("https://api.vk.com/method/send", {params: requestSendMessage}).then(() => {
+                    axios.get("https://api.vk.com/method/messages.send", {params: requestSendMessage}).then(() => {
                         console.log(123)
                     })
                 })
