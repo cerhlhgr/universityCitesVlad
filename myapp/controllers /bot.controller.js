@@ -23,16 +23,13 @@ class BotController{
                     count: 1,
                     v: req.body.v
                 }
-                axios.get("https://api.vk.com/method/database.getCities",  {params: requestCities}).then(res => {
-                    return res.data.response.items[0].title
-                }).then((city) => {
-                    console.log(city)
+                axios.get("https://api.vk.com/method/database.getCities",  {params: requestCities}).then(() => {
                     const requestSendMessage = {
                         access_token: tokenGroup,
                         v: req.body.v,
                         user_id: req.body.object.message.from_id,
                         peer_id: req.body.group_id,
-                        message: `Вы выбрали город ${city}, напишите название уника`,
+                        message: `Вы выбрали город ${req.body.object.message.text}, напишите название уника`,
                         random_id: Math.random()
                     }
                     axios.get("https://api.vk.com/method/send", {params: requestSendMessage}).then(() => {
