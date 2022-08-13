@@ -10,6 +10,8 @@ const bodyParser = require('body-parser')
 
 const app = express();
 
+console.log("asdasd")
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
