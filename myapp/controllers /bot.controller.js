@@ -24,6 +24,7 @@ class BotController{
                     v: req.body.v
                 }
                 axios.get("https://api.vk.com/method/database.getCities",  {params: requestCities}).then(res => {
+                    console.log(res[0], res, res[0].title)
                     return res[0].title
                 }).then((city) => {
                     const requestSendMessage = {
