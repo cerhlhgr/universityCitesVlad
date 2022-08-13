@@ -10,8 +10,6 @@ const bodyParser = require('body-parser')
 
 const app = express();
 
-console.log("asdasd")
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -21,5 +19,9 @@ app.use(cookieParser());
 //тут руты владос
 
 app.use('/vlados', indexRouter);
+
+app.listen(callback => {
+    console.log(callback)
+})
 
 module.exports = app;
