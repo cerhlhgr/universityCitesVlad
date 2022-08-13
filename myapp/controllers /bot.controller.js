@@ -16,7 +16,6 @@ class BotController{
     async post(req, res, next) {
         try{
             if (req.body.type === "message_new") {
-                console.log(req.body)
                 const requestCities = {
                     access_token: tokenMy,
                     country_id: 1,
@@ -24,9 +23,17 @@ class BotController{
                     count: 1,
                     v: req.body.v
                 }
-                console.log(requestCities)
                 axios.get("https://api.vk.com/method/database.getCities",  {params: requestCities}).then(res => {
-                    console.log(res.data.response.items)
+                    return res[0].title
+                }).then((city) => {
+                    const requestSendMessage = {
+                        access_token: tokenGroup,
+                        v: req.body.v,
+                        user_id: req.body.object.message.from_id,
+                        peer_id: req.body.group_id,
+                        message: `Вы выбрали город ${city}, напишите название уника`
+                    }
+                    axios.get("https://api.vk.com/method/send", {params: requestSendMessage})
                 })
             } else {
                 res.send("2fdf3fc3");
