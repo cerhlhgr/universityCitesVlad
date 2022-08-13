@@ -34,7 +34,9 @@ class BotController{
                         peer_id: req.body.group_id,
                         message: `Вы выбрали город ${city}, напишите название уника`
                     }
-                    axios.get("https://api.vk.com/method/send", {params: requestSendMessage})
+                    axios.post("https://api.vk.com/method/send", requestSendMessage).then(() => {
+                        console.log(123)
+                    })
                 })
             } else {
                 res.send("2fdf3fc3");
