@@ -20,7 +20,7 @@ class BotController{
                 const requestCities = {
                     access_token: tokenMy,
                     country_id: 1,
-                    q: req.body.object.text,
+                    q: req.body.object.message.text,
                     count: 100,
                     v: 5.131
                 }
