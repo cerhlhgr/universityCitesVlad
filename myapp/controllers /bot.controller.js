@@ -18,6 +18,7 @@ class BotController{
             if (req.body.type === "message_new") {
                 console.log(req.body)
                 const requestCities = {
+                    access_token: tokenMy,
                     country_id: 1,
                     q: req.body.object.text
                 }
