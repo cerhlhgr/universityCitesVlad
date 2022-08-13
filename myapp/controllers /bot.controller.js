@@ -14,7 +14,7 @@ class BotController{
     async post(req, res, next) {
         try{
             if (req.body.type === "message_new") {
-                axios.get("https://dev.vk.com/method/database.getCities").then(res => {
+                axios.post("https://dev.vk.com/method/database.getCities").then(res => {
                     console.log(res)
                 })
             } else {
