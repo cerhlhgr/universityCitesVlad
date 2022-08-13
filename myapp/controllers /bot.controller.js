@@ -24,7 +24,7 @@ class BotController{
                     count: 1
                 }
                 console.log(requestCities)
-                axios.post("https://api.vk.com/method/database.getCities", requestCities).then(res => {
+                axios.get("https://api.vk.com/method/database.getCities",  {params: requestCities}).then(res => {
                     console.log(res)
                 })
             } else {
